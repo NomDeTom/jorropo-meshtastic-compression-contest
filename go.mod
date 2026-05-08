@@ -2,6 +2,8 @@ module github.com/Jorropo/meshtastic-compression-contest
 
 go 1.25
 
+toolchain go1.25.4
+
 require (
 	github.com/cespare/go-smaz v1.0.0
 	github.com/cloudflare/golz4 v0.0.0-20240916140612-caecf3c00c06

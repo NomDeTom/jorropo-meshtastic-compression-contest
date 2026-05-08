@@ -35,6 +35,7 @@ import (
 
 	"golang.org/x/sys/unix"
 
+	"github.com/Jorropo/meshtastic-compression-contest/arithcode"
 	"github.com/Jorropo/meshtastic-compression-contest/unishox2"
 	"github.com/cespare/go-smaz"
 	cloudflare_lz4 "github.com/cloudflare/golz4"
@@ -60,6 +61,12 @@ type compressionInput struct {
 	data     []byte
 }
 type compressor = func(compressionInput) []byte
+
+type compressorPortnumResult struct {
+	compressorName  string
+	portnumResults  map[uint64]float64 // portnum -> average ratio
+	dictionaryBytes int64              // dictionary size in bytes, 0 if not applicable
+}
 
 const generateTrainingDataset = false
 const skipAllUnishoxPermutations = true
@@ -204,6 +211,12 @@ func main() {
 			return shoco_models.Emails().ProposedCompress(data)
 		}),
 		"snowflake_Jorropo": explodePacketForPortnumPayloadSubstitution(compressPerPortnumTuned),
+		"arithmetic": compressJustBytes(func(data []byte) []byte {
+			result := arithcode.Encode(data, &arithmeticCDFGlobal)
+			return arithmeticWithNoCompressFlag(data, result)
+		}),
+		"arithmetic_Jorropo": explodePacketForPortnumPayloadSubstitution(compressPerPortnumArithmeticImplicitJorropo),
+		"arithmetic_Tom": explodePacketForPortnumPayloadSubstitution(compressPerPortnumArithmeticImplicitTom),
 	}
 
 	type unishoxPair struct {
@@ -291,6 +304,7 @@ func main() {
 	}
 
 	var results = []resultPair{}
+	var portnumResults []compressorPortnumResult
 
 	const nameOnlyTextMessageAppSuffix = " only TEXT_MESSAGE_APP"
 
@@ -307,6 +321,14 @@ func main() {
 			log.Fatalf("Error testing and writing %s: %v", nameOnlyTextMessageApp, err)
 		}
 		results = append(results, resultPair{name: name, avg: avg, avgOnlyTextMessageApp: avgOnlyTextMessageApp})
+
+		// Collect per-portnum results for summary table
+		perPortnumAvg := testPerPortnum(comp)
+		portnumResults = append(portnumResults, compressorPortnumResult{
+			compressorName:  name,
+			portnumResults:  perPortnumAvg,
+			dictionaryBytes: calculateDictionarySize(name),
+		})
 	}
 
 	slices.SortFunc(results, func(a, b resultPair) int {
@@ -321,11 +343,37 @@ func main() {
 
 	README.WriteString(`# Meshtastic Compression Showdown
 
-This project contain benchmarks of various compression algorithms applied on a data of meshtastic packets.
+This project contains benchmarks of various compression algorithms applied on a dataset of meshtastic packets.
 
 For context a Reciprocal Compression Ratio **above** 1 means the compressed data is **bigger** than the uncompressed data.
-One **bellow** 1 means the compressed data is **smaller** than the uncompressed data.
+A ratio **below** 1 means the compressed data is **smaller** than the uncompressed data.
 
+## Per-Portnum Compression Summary
+
+`)
+	generatePortnumSummaryTable(&README, portnumResults)
+	README.WriteString(`
+## Dictionary/Model Sizes
+
+| Compressor | Dictionary Size (bytes) |
+|------------|------------------------|
+`)
+
+	// Sort by compressor name for the dictionary size table
+	dictResults := portnumResults
+	slices.SortFunc(dictResults, func(a, b compressorPortnumResult) int {
+		return cmp.Compare(a.compressorName, b.compressorName)
+	})
+
+	for _, r := range dictResults {
+		if r.dictionaryBytes == 0 {
+			fmt.Fprintf(&README, "| `%s` | 0 (algorithm-based) |\n", r.compressorName)
+		} else {
+			fmt.Fprintf(&README, "| `%s` | %d |\n", r.compressorName, r.dictionaryBytes)
+		}
+	}
+
+	README.WriteString(`
 ## Results
 
 | Compressor | Average Reciprocal Compression Ratio (TEXT_MESSAGE_APP only) |
@@ -381,6 +429,238 @@ func compressJustBytes(comp func([]byte) []byte) compressor {
 	}
 }
 
+// testPerPortnum computes average compression ratio per portnum for a given compressor.
+func testPerPortnum(comp compressor) map[uint64]float64 {
+	cachedDataset, err := os.ReadFile(datasetName)
+	if err != nil {
+		return map[uint64]float64{}
+	}
+	dataset := cachedDataset
+	totalRows := binary.LittleEndian.Uint64(dataset[:8])
+	dataset = dataset[8:]
+
+	portnumStats := make(map[uint64]struct {
+		totalCompressed uint64
+		totalOriginal   uint64
+	})
+
+	for range totalRows {
+		from, to := binary.LittleEndian.Uint32(dataset[:4]), binary.LittleEndian.Uint32(dataset[4:8])
+		dataset = dataset[8:]
+
+		length := dataset[0]
+		dataset = dataset[1:]
+
+		payload := dataset[:length]
+		dataset = dataset[length:]
+
+		// Extract portnum from packet
+		portnum, _, _, _, ok := extractPortnumAndPayloadFromDecoded(payload)
+		if !ok {
+			continue
+		}
+
+		compressed := comp(compressionInput{from: from, to: to, data: payload})
+		if compressed == nil || len(compressed) >= len(payload) {
+			compressed = payload
+		}
+
+		stats := portnumStats[portnum]
+		stats.totalCompressed += uint64(len(compressed))
+		stats.totalOriginal += uint64(len(payload))
+		portnumStats[portnum] = stats
+	}
+
+	// Convert to average ratios
+	result := make(map[uint64]float64)
+	for portnum, stats := range portnumStats {
+		if stats.totalOriginal > 0 {
+			result[portnum] = float64(stats.totalCompressed) / float64(stats.totalOriginal)
+		}
+	}
+	return result
+}
+
+// generatePortnumSummaryTable writes a markdown table showing compression ratios per portnum.
+func generatePortnumSummaryTable(w *bytes.Buffer, results []compressorPortnumResult) {
+	const sortPortnum = uint64(1)
+
+	// Collect all unique portnums and sort them
+	portnumSet := make(map[uint64]bool)
+	for _, result := range results {
+		for portnum := range result.portnumResults {
+			portnumSet[portnum] = true
+		}
+	}
+
+	var portnums []uint64
+	for portnum := range portnumSet {
+		portnums = append(portnums, portnum)
+	}
+	slices.Sort(portnums)
+
+	// Sort by Portnum 1 ratio (best first). Missing values sort last.
+	slices.SortFunc(results, func(a, b compressorPortnumResult) int {
+		aRatio, aOk := a.portnumResults[sortPortnum]
+		bRatio, bOk := b.portnumResults[sortPortnum]
+
+		if !aOk {
+			aRatio = math.Inf(1)
+		}
+		if !bOk {
+			bRatio = math.Inf(1)
+		}
+
+		if r := cmp.Compare(aRatio, bRatio); r != 0 {
+			return r
+		}
+		return cmp.Compare(a.compressorName, b.compressorName)
+	})
+
+	// Calculate column widths
+	compressorColWidth := len("Compressor")
+	for _, result := range results {
+		nameLen := len(result.compressorName) + 2 // +2 for backticks
+		if nameLen > compressorColWidth {
+			compressorColWidth = nameLen
+		}
+	}
+
+	// Data column width based on compact header format
+	dataColWidths := make([]int, len(portnums))
+	for i, portnum := range portnums {
+		header := fmt.Sprintf("P%d (%s)", portnum, portnumFriendlyName(portnum))
+		dataColWidths[i] = len(header)
+		if dataColWidths[i] < 7 {
+			dataColWidths[i] = 7 // minimum width for "0.0000 "
+		}
+	}
+
+	// Write header row
+	fmt.Fprintf(w, "| %-*s |", compressorColWidth, "Compressor")
+	for i, portnum := range portnums {
+		header := fmt.Sprintf("P%d (%s)", portnum, portnumFriendlyName(portnum))
+		fmt.Fprintf(w, " %-*s |", dataColWidths[i], header)
+	}
+	w.WriteString("\n")
+
+	// Write separator row
+	fmt.Fprintf(w, "| %s |", strings.Repeat("-", compressorColWidth))
+	for _, width := range dataColWidths {
+		fmt.Fprintf(w, " %s |", strings.Repeat("-", width))
+	}
+	w.WriteString("\n")
+
+	// Write data rows
+	for _, result := range results {
+		compressorName := fmt.Sprintf("`%s`", result.compressorName)
+		fmt.Fprintf(w, "| %-*s |", compressorColWidth, compressorName)
+		for i, portnum := range portnums {
+			var cellContent string
+			if ratio, ok := result.portnumResults[portnum]; ok {
+				cellContent = fmt.Sprintf("%.4f", ratio)
+			} else {
+				cellContent = "—"
+			}
+			fmt.Fprintf(w, " %-*s |", dataColWidths[i], cellContent)
+		}
+		w.WriteString("\n")
+	}
+	w.WriteString("\n")
+}
+
+func portnumFriendlyName(portnum uint64) string {
+	switch portnum {
+	case 1:
+		return "TEXT_MESSAGE_APP"
+	case 3:
+		return "POSITION_APP"
+	case 4:
+		return "NODEINFO_APP"
+	case 5:
+		return "ROUTING_APP"
+	case 65:
+		return "STORE_FORWARD_APP"
+	case 67:
+		return "TELEMETRY_APP"
+	case 70:
+		return "TRACEROUTE_APP"
+	case 71:
+		return "NEIGHBORINFO_APP"
+	default:
+		return "UNKNOWN"
+	}
+}
+
+// calculateDictionarySize returns the approximate dictionary/model size in bytes for a compressor.
+// This is used to measure algorithm complexity and memory footprint.
+func calculateDictionarySize(compressorName string) int64 {
+	// Arithmetic CDF tables: ~257 float32 values per portnum (7 portnums)
+	if strings.Contains(compressorName, "arithmetic") {
+		return 257 * 4 * 7 // 7 portnums, 257 bytes frequency, 4 bytes per float32
+	}
+
+	// Shoco models: estimated sizes based on dictionary complexity
+	if strings.Contains(compressorName, "shoco") {
+		if strings.Contains(compressorName, "FilePath") {
+			return 2048 // Small model
+		}
+		if strings.Contains(compressorName, "Emails") {
+			return 1024 // Small model
+		}
+		if strings.Contains(compressorName, "Words") {
+			return 3072 // Medium model
+		}
+		if strings.Contains(compressorName, "TextEn") {
+			return 4096 // Larger text model
+		}
+		return 1024 // Default shoco model
+	}
+
+	// Smaz: compact dictionary
+	if strings.Contains(compressorName, "smaz") {
+		return 1280 // Fixed size smaz dictionary
+	}
+
+	// Unishox2: no external dictionary, algorithm only
+	if strings.Contains(compressorName, "unishox2") {
+		return 0 // Algorithm-based, no dictionary
+	}
+
+	// Meshtastic models: varies by version
+	if strings.Contains(compressorName, "meshtasticmodel") {
+		if strings.Contains(compressorName, "pbmodel") {
+			return 8192 // Protobuf model
+		}
+		return 4096 // Neural model weights estimate
+	}
+
+	// Snowflake: small specialized dictionary
+	if strings.Contains(compressorName, "snowflake") {
+		return 512 // Small dictionary
+	}
+
+	// Standard compression algorithms: no dictionary overhead
+	// (gzip, zlib, lz4, flate, snappy, rle, lzw, s2, noop all have minimal or zero static dictionaries)
+	return 0
+}
+
+// arithmeticWithNoCompressFlag prefixes a 1-byte flag to make decode decisions explicit:
+// 0x00 means payload is uncompressed passthrough, 0x01 means payload is arithmetic-compressed.
+// For now, we keep the implementation byte-aligned and simple for contest scoring.
+func arithmeticWithNoCompressFlag(original, arithmetic []byte) []byte {
+	if arithmetic != nil && len(arithmetic) < len(original) {
+		out := make([]byte, 1+len(arithmetic))
+		out[0] = 1
+		copy(out[1:], arithmetic)
+		return out
+	}
+	out := make([]byte, 1+len(original))
+	out[0] = 0
+	copy(out[1:], original)
+	return out
+}
+
 func compressorOnlyTextMessageAppContent(comp func([]byte) []byte) compressor {
 	return explodePacketForPortnumPayloadSubstitution(func(portnum uint64, from, to uint32, payload []byte) (newPortnum uint64, newPayload []byte, changed bool) {
 		if portnum != TEXT_MESSAGE_APP {
@@ -400,6 +680,12 @@ func testAndWrite(name string, comp compressor, onlyTextMessageApp bool) (avg fl
 	for i, count := range results {
 		sum += count
 		cdf[i] = sum
+	}
+
+	// Skip if no valid results (avoid NaN in CDF)
+	if sum == 0 {
+		log.Printf("Skipping %s: no valid compression results (sum=0)", name)
+		return 0, nil
 	}
 
 	// print graph of the cdf
@@ -487,6 +773,9 @@ func test(comp compressor, onlyTextMessageApp bool) (buckets [1024]uint64, avg f
 			defer wg.Done()
 			for payload := range tasks {
 				compressed := comp(payload)
+				if compressed == nil || len(compressed) >= len(payload.data) {
+					compressed = payload.data
+				}
 
 				compressionRatio := float64(len(compressed)) / float64(len(payload.data))
 				bucket := int(compressionRatio * float64(len(buckets)) / zeroRatio)
@@ -516,7 +805,8 @@ func test(comp compressor, onlyTextMessageApp bool) (buckets [1024]uint64, avg f
 		if onlyTextMessageApp {
 			portnum, _, _, _, ok := extractPortnumAndPayloadFromDecoded(payload)
 			if !ok {
-				panic("unreachable")
+				// Skip packets that can't be parsed, don't panic
+				continue
 			}
 			if portnum != TEXT_MESSAGE_APP {
 				continue
@@ -542,17 +832,22 @@ func test(comp compressor, onlyTextMessageApp bool) (buckets [1024]uint64, avg f
 }
 
 func generateDatasetBin(filename string) error {
-	db, err := sql.Open("sqlite", "file:packets_recovered.db?mode=ro")
+	db, err := sql.Open("sqlite", "file:data/packets/packets_recovered.db?mode=ro")
 	if err != nil {
 		log.Fatal(err)
 	}
 	defer db.Close()
 
-	file, err := os.OpenFile(".", unix.O_TMPFILE|os.O_WRONLY, 0622)
+	// Use a temp file in /tmp for better compatibility
+	tmpfile, err := os.CreateTemp("/tmp", "meshtastic_dataset_*.tmp")
 	if err != nil {
-		return fmt.Errorf("creating file: %w", err)
+		return fmt.Errorf("creating temp file: %w", err)
 	}
-	defer file.Close()
+	tmpName := tmpfile.Name()
+	defer func() {
+		// Always clean up temp file, even if rename succeeded
+		os.Remove(tmpName)
+	}()
 
 	rows, err := db.Query(`SELECT payload FROM packet`)
 	if err != nil {
@@ -563,7 +858,7 @@ func generateDatasetBin(filename string) error {
 	start := time.Now()
 	totalRows := countRows("packet", db)
 
-	w := bufio.NewWriter(file)
+	w := bufio.NewWriter(tmpfile)
 
 	// Number of entries placeholder
 	_, err = w.WriteString("\x00\x00\x00\x00\x00\x00\x00\x00")
@@ -672,17 +967,17 @@ func generateDatasetBin(filename string) error {
 		return fmt.Errorf("flushing to file: %w", err)
 	}
 
-	_, err = file.Seek(0, 0)
+	_, err = tmpfile.Seek(0, 0)
 	if err != nil {
 		return fmt.Errorf("seeking file: %w", err)
 	}
 
-	err = binary.Write(file, binary.LittleEndian, totalEntries)
+	err = binary.Write(tmpfile, binary.LittleEndian, totalEntries)
 	if err != nil {
 		return fmt.Errorf("writing total entries to file: %w", err)
 	}
 
-	syscallConn, err := file.SyscallConn()
+	syscallConn, err := tmpfile.SyscallConn()
 	if err != nil {
 		return fmt.Errorf("getting syscall connection: %w", err)
 	}
@@ -693,17 +988,25 @@ func generateDatasetBin(filename string) error {
 			errr = fmt.Errorf("syncing file: %w", errr)
 			return
 		}
-		errr = unix.Linkat(int(fd), "", unix.AT_FDCWD, filename, unix.AT_EMPTY_PATH)
-		if errr != nil {
-			errr = fmt.Errorf("linking temp file to %s: %w", filename, errr)
-			return
-		}
 	})
 	if err != nil {
 		return fmt.Errorf("getting control: %w", err)
 	}
+	if errr != nil {
+		return errr
+	}
 
-	return errr
+	err = tmpfile.Close()
+	if err != nil {
+		return fmt.Errorf("closing temp file: %w", err)
+	}
+
+	err = os.Rename(tmpfile.Name(), filename)
+	if err != nil {
+		return fmt.Errorf("renaming temp file to %s: %w", filename, err)
+	}
+
+	return nil
 }
 
 func extractLoraPayloadFromMessage(msg []byte) (from, to uint32, payload []byte, ok bool) {

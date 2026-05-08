@@ -5,6 +5,7 @@ import (
 	"fmt"
 	"log"
 
+	"github.com/Jorropo/meshtastic-compression-contest/arithcode"
 	"github.com/Jorropo/meshtastic-compression-contest/unishox2"
 	"google.golang.org/protobuf/encoding/protowire"
 )
@@ -13,7 +14,17 @@ const (
 	TEXT_MESSAGE_APP = 1
 	NODEINFO_APP     = 4
 	COMPRESSED       = 7
+	// highBitNoCompressPortnum marks packets that intentionally skipped compression.
+	// Regular meshtastic portnums are low values, so this gives a deterministic alias.
+	highBitNoCompressPortnum = uint64(1 << 31)
 )
+
+func noCompressAliasPortnum(portnum uint64) (uint64, bool) {
+	if portnum&highBitNoCompressPortnum != 0 {
+		return 0, false
+	}
+	return portnum | highBitNoCompressPortnum, true
+}
 
 type compressorNum uint8
 
@@ -138,6 +149,56 @@ func compressPerPortnumTuned(portnum uint64, from, to uint32, payload []byte) (u
 	}
 
 	return COMPRESSED, append([]byte{byte(compressedPortnum)}, compressedPayload...), true
+}
+
+// compressPerPortnumArithmeticImplicitJorropo uses original per-portnum Jorropo CDFs
+// (trained on full dataset, not sampled)
+func compressPerPortnumArithmeticImplicitJorropo(portnum uint64, from, to uint32, payload []byte) (uint64, []byte, bool) {
+	_ = from
+	_ = to
+
+	cdf := arithmeticGetCDFJorropo(portnum)
+	compressed := arithcode.Encode(payload, cdf)
+	if compressed != nil && len(compressed) < len(payload) {
+		// Compression is implicit when portnum is unchanged.
+		return portnum, compressed, true
+	}
+
+	aliasPortnum, ok := noCompressAliasPortnum(portnum)
+	if !ok {
+		return 0, nil, false
+	}
+
+	// No-compress is explicit via aliased portnum, payload remains unchanged.
+	return aliasPortnum, payload, true
+}
+
+// compressPerPortnumArithmeticImplicitTom uses Tom's trained 25% per-portnum CDFs
+// (trained on 25% sampled dataset with fallback to global)
+func compressPerPortnumArithmeticImplicitTom(portnum uint64, from, to uint32, payload []byte) (uint64, []byte, bool) {
+	_ = from
+	_ = to
+
+	// Tom's approach: use 25% trained per-portnum CDFs
+	cdf := arithmeticGetCDFTom(portnum)
+	compressed := arithcode.Encode(payload, cdf)
+	if compressed != nil && len(compressed) < len(payload) {
+		// Compression is implicit when portnum is unchanged.
+		return portnum, compressed, true
+	}
+
+	aliasPortnum, ok := noCompressAliasPortnum(portnum)
+	if !ok {
+		return 0, nil, false
+	}
+
+	// No-compress is explicit via aliased portnum, payload remains unchanged.
+	return aliasPortnum, payload, true
+}
+
+// Legacy alias for backwards compatibility
+func compressPerPortnumArithmeticImplicit(portnum uint64, from, to uint32, payload []byte) (uint64, []byte, bool) {
+	return compressPerPortnumArithmeticImplicitJorropo(portnum, from, to, payload)
 }
 
 func nodeinfoCompression2(from uint32, payload []byte) ([]byte, bool) {
