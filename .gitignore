@@ -2,3 +2,7 @@ packets_recovered.db
 packets.bin
 train/
 dictionaries/
+
+# Compiled binaries
+meshtastic-compression-contest
+*.tmp

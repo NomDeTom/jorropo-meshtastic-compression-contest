@@ -26,15 +26,6 @@ func arithmeticGetCDFTom(portnum uint64) *[257]float32 {
 	return &arithmeticCDFGlobal
 }
 
-// arithmeticGetCDFJorropo returns the Jorropo original portnum-specific CDF, or the global CDF if unknown.
-// Currently uses the same per-portnum table; in the future should use separate original training data.
-func arithmeticGetCDFJorropo(portnum uint64) *[257]float32 {
-	if cdf, ok := arithmeticCDFByPortnum[portnum]; ok {
-		return cdf
-	}
-	return &arithmeticCDFGlobal
-}
-
 // arithmeticGetCDF returns the portnum-specific CDF, or the global CDF if unknown.
 // Legacy function for backwards compatibility; defaults to Tom's trained CDFs.
 func arithmeticGetCDF(portnum uint64) *[257]float32 {

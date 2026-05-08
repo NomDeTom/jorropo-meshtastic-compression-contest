@@ -215,7 +215,6 @@ func main() {
 			result := arithcode.Encode(data, &arithmeticCDFGlobal)
 			return arithmeticWithNoCompressFlag(data, result)
 		}),
-		"arithmetic_Jorropo": explodePacketForPortnumPayloadSubstitution(compressPerPortnumArithmeticImplicitJorropo),
 		"arithmetic_Tom": explodePacketForPortnumPayloadSubstitution(compressPerPortnumArithmeticImplicitTom),
 	}
 
