@@ -19,7 +19,6 @@ import (
 	"os"
 	"runtime"
 	"slices"
-	"strconv"
 	"strings"
 	"sync"
 	"sync/atomic"
@@ -285,13 +284,13 @@ func main() {
 			var packet meshtastic_pb.Data
 			err := proto.Unmarshal(data, &packet)
 			if err != nil {
-				log.Fatalf("Unmarshaling MeshPacket: %v", err)
+				return data
 			}
 
 			var b bytes.Buffer
 			err = v.Compress(&packet, &b)
 			if err != nil {
-				log.Fatalf("Compressing with meshtasticmodel %s: %v", v.Name, err)
+				return data
 			}
 			return b.Bytes()
 		})
@@ -733,6 +732,7 @@ func countRows(tableName string, db *sql.DB) uint {
 
 const datasetName = "packets.bin"
 const tryLimit = 10000
+const minPerPortnum = 100
 
 var cachedDataset []byte
 var loadDatasetOnce sync.Once
@@ -830,6 +830,12 @@ func test(comp compressor, onlyTextMessageApp bool) (buckets [1024]uint64, avg f
 	return
 }
 
+type datasetEntry struct {
+	from, to uint32
+	data     []byte
+	portnum  uint64
+}
+
 func generateDatasetBin(filename string) error {
 	db, err := sql.Open("sqlite", "file:data/packets/packets_recovered.db?mode=ro")
 	if err != nil {
@@ -857,33 +863,25 @@ func generateDatasetBin(filename string) error {
 	start := time.Now()
 	totalRows := countRows("packet", db)
 
-	w := bufio.NewWriter(tmpfile)
-
-	// Number of entries placeholder
-	_, err = w.WriteString("\x00\x00\x00\x00\x00\x00\x00\x00")
-	if err != nil {
-		return fmt.Errorf("writing placeholder to file: %w", err)
-	}
-
 	var seed [32]byte
 	copy(seed[:], "Jorropo")
 	rng := rand.New(rand.NewChaCha8(seed))
 
-	var totalEntries uint64
-	var done, trainPackets, trainTextMessage uint
+	// Phase 1: load all valid packets, grouped by portnum.
+	byPortnum := make(map[uint64][]datasetEntry)
+	var done uint
 	for rows.Next() {
 		done++
 		if done%50000 == 0 {
 			elapsed := time.Since(start)
 			remaining := time.Duration(float64(elapsed) / float64(done) * float64(totalRows-done))
-			log.Printf("Creating binary file %d/%d rows (%.2f%%), elapsed: %s, remaining: %s",
+			log.Printf("Loading packets %d/%d rows (%.2f%%), elapsed: %s, remaining: %s",
 				done, totalRows, float64(done)/float64(totalRows)*100,
 				elapsed.Truncate(time.Second), remaining.Truncate(time.Second))
 		}
 
 		var payload []byte
-		err := rows.Scan(&payload)
-		if err != nil {
+		if err := rows.Scan(&payload); err != nil {
 			log.Fatal(err)
 		}
 
@@ -892,75 +890,73 @@ func generateDatasetBin(filename string) error {
 			continue
 		}
 
-		roll := rng.UintN(totalRows)
-		// randomly pick messages for training or benchmark set
-		if roll < tryLimit {
-			binary.Write(w, binary.LittleEndian, from)
-			binary.Write(w, binary.LittleEndian, to)
-
-			err = w.WriteByte(byte(len(data)))
-			if err != nil {
-				return fmt.Errorf("writing entry length to file: %w", err)
-			}
-
-			_, err = w.Write(data)
-			if err != nil {
-				return fmt.Errorf("writing entry to file: %w", err)
-			}
-			totalEntries++
-		} else if generateTrainingDataset {
-		storeTrainingPacket:
-			{
-				f, err := os.OpenFile("train/packets/"+strconv.FormatUint(uint64(trainPackets), 36), os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0622)
-				if err != nil {
-					if errors.Is(err, os.ErrNotExist) {
-						err = os.MkdirAll("train/packets", 0755)
-						if err != nil {
-							return fmt.Errorf("creating train/packets directory: %w", err)
-						}
-						goto storeTrainingPacket
-					}
-					return fmt.Errorf("creating individual packet file: %w", err)
-				}
-				_, err = f.Write(data)
-				if err != nil {
-					return fmt.Errorf("writing individual packet file: %w", err)
-				}
-				err = f.Close()
-				if err != nil {
-					return fmt.Errorf("closing individual packet file: %w", err)
-				}
-				trainPackets++
-			}
-
-		storePortnumAndPayloadTraining:
-			{
-				portnum, _, payload, _, ok := extractPortnumAndPayloadFromDecoded(data)
-				if ok {
-					f, err := os.OpenFile("train/"+strconv.FormatUint(uint64(portnum), 10)+"/"+strconv.FormatUint(uint64(trainTextMessage), 36), os.O_CREATE|os.O_TRUNC|os.O_WRONLY, 0622)
-					if err != nil {
-						if errors.Is(err, os.ErrNotExist) {
-							err = os.MkdirAll("train/"+strconv.FormatUint(uint64(portnum), 10), 0755)
-							if err != nil {
-								return fmt.Errorf("creating train/packets directory: %w", err)
-							}
-							goto storePortnumAndPayloadTraining
-						}
-						return fmt.Errorf("creating individual text message file: %w", err)
-					}
-					_, err = f.Write(payload)
-					if err != nil {
-						return fmt.Errorf("writing individual text message file: %w", err)
-					}
-					err = f.Close()
-					if err != nil {
-						return fmt.Errorf("closing individual text message file: %w", err)
-					}
-				}
-				trainTextMessage++
-			}
+		portnum, _, _, _, pok := extractPortnumAndPayloadFromDecoded(data)
+		if !pok {
+			portnum = 0
 		}
+
+		dataCopy := make([]byte, len(data))
+		copy(dataCopy, data)
+		byPortnum[portnum] = append(byPortnum[portnum], datasetEntry{from, to, dataCopy, portnum})
 	}
+	log.Printf("Loaded %d valid packets across %d portnums", done, len(byPortnum))
+
+	// Phase 2: stratified sampling.
+	// Shuffle each portnum group independently.
+	for pn := range byPortnum {
+		entries := byPortnum[pn]
+		rng.Shuffle(len(entries), func(i, j int) { entries[i], entries[j] = entries[j], entries[i] })
+		byPortnum[pn] = entries
+	}
+
+	// Guarantee minPerPortnum entries from each portnum.
+	var selected []datasetEntry
+	var unselected []datasetEntry
+	for _, entries := range byPortnum {
+		n := min(minPerPortnum, len(entries))
+		selected = append(selected, entries[:n]...)
+		unselected = append(unselected, entries[n:]...)
+	}
+
+	// Randomly sample from unselected to reach tryLimit total.
+	rng.Shuffle(len(unselected), func(i, j int) { unselected[i], unselected[j] = unselected[j], unselected[i] })
+	need := tryLimit - len(selected)
+	if need > 0 {
+		if need > len(unselected) {
+			need = len(unselected)
+		}
+		selected = append(selected, unselected[:need]...)
+	}
+
+	// Final shuffle so portnum groups are interleaved.
+	rng.Shuffle(len(selected), func(i, j int) { selected[i], selected[j] = selected[j], selected[i] })
+
+	// Log per-portnum counts in benchmark set.
+	portnumCounts := make(map[uint64]int)
+	for _, e := range selected {
+		portnumCounts[e.portnum]++
+	}
+	log.Printf("Benchmark set: %d packets total", len(selected))
+	for pn, cnt := range portnumCounts {
+		log.Printf("  portnum %d: %d packets", pn, cnt)
+	}
+
+	// Phase 3: write benchmark entries.
+	w := bufio.NewWriter(tmpfile)
+	_, err = w.WriteString("\x00\x00\x00\x00\x00\x00\x00\x00") // placeholder for count
+	if err != nil {
+		return fmt.Errorf("writing placeholder to file: %w", err)
+	}
+
+	for _, e := range selected {
+		binary.Write(w, binary.LittleEndian, e.from)
+		binary.Write(w, binary.LittleEndian, e.to)
+		w.WriteByte(byte(len(e.data)))
+		w.Write(e.data)
+	}
+
+	totalEntries := uint64(len(selected))
+
 	err = w.Flush()
 	if err != nil {
 		return fmt.Errorf("flushing to file: %w", err)

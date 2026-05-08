@@ -7,69 +7,68 @@ A ratio **below** 1 means the compressed data is **smaller** than the uncompress
 
 ## Per-Portnum Compression Summary
 
-| Compressor                                    | P1 (TEXT_MESSAGE_APP) | P3 (POSITION_APP) | P4 (NODEINFO_APP) | P5 (ROUTING_APP) | P67 (TELEMETRY_APP) | P70 (TRACEROUTE_APP) | P71 (NEIGHBORINFO_APP) |
-| --------------------------------------------- | --------------------- | ----------------- | ----------------- | ---------------- | ------------------- | -------------------- | ---------------------- |
-| `unishox2_alpha_only`                         | 0.6555                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `snowflake_Jorropo`                           | 0.6790                | 1.0000            | 0.7660            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_alpha_num_only`                     | 0.6894                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_no_uni_favor_text`                  | 0.7102                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_favor_alpha`                        | 0.7132                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_alpha_num_sym_only`                 | 0.7159                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_alpha_num_sym_only_text`            | 0.7159                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `meshtasticmodel_V10_EgonElbre`               | 0.7171                | 0.9454            | 0.9687            | 0.7898           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V8_EgonElbre`                | 0.7171                | 0.9454            | 0.9687            | 0.7898           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V9_EgonElbre`                | 0.7171                | 0.9454            | 0.9687            | 0.7898           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V1_EgonElbre`                | 0.7175                | 0.9448            | 0.9661            | 0.7829           | 0.9503              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V4_EgonElbre`                | 0.7175                | 0.9448            | 0.9661            | 0.7829           | 0.9503              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V5_EgonElbre`                | 0.7175                | 0.9448            | 0.9661            | 0.7829           | 0.9503              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V6_EgonElbre`                | 0.7175                | 0.9448            | 0.9661            | 0.7829           | 0.9503              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V7_EgonElbre`                | 0.7175                | 0.9461            | 0.9694            | 0.8138           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_V3_EgonElbre`                | 0.7186                | 0.9496            | 0.9691            | 0.8025           | 0.9621              | 0.9737               | 0.9868                 |
-| `unishox2_json_no_uni`                        | 0.7194                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_no_uni`                             | 0.7194                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_default`                            | 0.7236                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_html`                               | 0.7236                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_json`                               | 0.7236                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_url`                                | 0.7236                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_xml`                                | 0.7236                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_no_dict`                            | 0.7240                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_favor_dict`                         | 0.7252                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_favor_sym`                          | 0.7302                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `unishox2_favor_umlaut`                       | 0.7313                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_TextEn_tmthrgd_Jorropo`                | 0.7768                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `meshtasticmodel_V2_EgonElbre`                | 0.7794                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `smaz_cespare_Jorropo`                        | 0.7806                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_TextEn_tmthrgd`                        | 0.8145                | 1.0000            | 0.9997            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `arithmetic_Jorropo`                          | 0.8264                | 0.9956            | 0.9886            | 1.0000           | 0.9997              | 1.0000               | 0.8675                 |
-| `arithmetic_Tom`                              | 0.8264                | 0.9956            | 0.9886            | 1.0000           | 0.9997              | 1.0000               | 0.8675                 |
-| `smaz_cespare`                                | 0.8283                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_WordsEn_tmthrgd_Jorropo`               | 0.8499                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_Emails_tmthrgd_Jorropo`                | 0.8799                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_WordsEn_tmthrgd`                       | 0.8861                | 1.0000            | 0.9998            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_FilePath_tmthrgd_Jorropo`              | 0.8899                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_Emails_tmthrgd`                        | 0.9130                | 1.0000            | 0.9999            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `shoco_FilePath_tmthrgd`                      | 0.9246                | 1.0000            | 0.9999            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `arithmetic`                                  | 0.9326                | 0.9946            | 0.9996            | 1.0000           | 0.9999              | 1.0000               | 1.0000                 |
-| `meshtasticmodel_pbmodel-o1_EgonElbre`        | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_pbmodel-o2_EgonElbre`        | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_pbmodel-varint_EgonElbre`    | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `meshtasticmodel_pbmodel_EgonElbre`           | 0.9473                | 0.9448            | 0.9618            | 0.7809           | 0.9495              | 0.9737               | 0.9868                 |
-| `flate_klauspost`                             | 0.9615                | 0.9990            | 0.9993            | 1.0000           | 1.0000              | 0.3070               | 0.8808                 |
-| `flate_std`                                   | 0.9707                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.2719               | 0.9073                 |
-| `zlib_klauspost`                              | 0.9773                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.3596               | 0.9205                 |
-| `lzw_std`                                     | 0.9788                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4211               | 0.8543                 |
-| `zlib_std`                                    | 0.9827                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.3246               | 0.9470                 |
-| `lz4_cloudflareHC`                            | 0.9881                | 0.9992            | 0.9999            | 1.0000           | 1.0000              | 0.2719               | 0.9139                 |
-| `lz4_cloudflare`                              | 0.9885                | 0.9992            | 0.9999            | 1.0000           | 1.0000              | 0.2719               | 0.9536                 |
-| `gzip_klauspost`                              | 0.9908                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4649               | 1.0000                 |
-| `gzip_std`                                    | 0.9919                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4298               | 1.0000                 |
-| `lz4_pierrec`                                 | 0.9954                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4386               | 1.0000                 |
-| `s2_klauspost`                                | 0.9954                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4386               | 1.0000                 |
-| `snappy_klauspost`                            | 0.9954                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 0.4386               | 1.0000                 |
-| `noop`                                        | 1.0000                | 1.0000            | 1.0000            | 1.0000           | 1.0000              | 1.0000               | 1.0000                 |
-| `rle_inkyblackness`                           | 1.0000                | 1.0000            | 0.9999            | 1.0000           | 0.9999              | 0.5877               | 1.0000                 |
+| Compressor                                    | P1 (TEXT_MESSAGE_APP) | P3 (POSITION_APP) | P4 (NODEINFO_APP) | P5 (ROUTING_APP) | P6 (UNKNOWN) | P65 (STORE_FORWARD_APP) | P66 (UNKNOWN) | P67 (TELEMETRY_APP) | P70 (TRACEROUTE_APP) | P71 (NEIGHBORINFO_APP) | P72 (UNKNOWN) | P278 (UNKNOWN) |
+| --------------------------------------------- | --------------------- | ----------------- | ----------------- | ---------------- | ------------ | ----------------------- | ------------- | ------------------- | -------------------- | ---------------------- | ------------- | -------------- |
+| `unishox2_alpha_only`                         | 0.6606                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `snowflake_Jorropo`                           | 0.6845                | 1.0000            | 0.7659            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_alpha_num_only`                     | 0.6944                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_no_uni_favor_text`                  | 0.7086                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_favor_alpha`                        | 0.7129                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_no_uni`                             | 0.7138                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_json_no_uni`                        | 0.7141                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_url`                                | 0.7168                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_default`                            | 0.7183                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_xml`                                | 0.7183                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_html`                               | 0.7186                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_json`                               | 0.7186                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_favor_dict`                         | 0.7206                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_alpha_num_sym_only`                 | 0.7222                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_alpha_num_sym_only_text`            | 0.7222                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_favor_sym`                          | 0.7242                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_favor_umlaut`                       | 0.7262                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `unishox2_no_dict`                            | 0.7310                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `meshtasticmodel_V10_EgonElbre`               | 0.7433                | 0.9458            | 0.9686            | 0.7920           | 0.8571       | 0.8553                  | 0.8333        | 0.9496              | 0.9457               | 0.9652                 | 0.9683        | 0.9345         |
+| `meshtasticmodel_V8_EgonElbre`                | 0.7433                | 0.9458            | 0.9686            | 0.7920           | 0.8571       | 0.8553                  | 0.8333        | 0.9496              | 0.9457               | 0.9652                 | 0.9683        | 0.9345         |
+| `meshtasticmodel_V9_EgonElbre`                | 0.7433                | 0.9458            | 0.9686            | 0.7920           | 0.8571       | 0.8553                  | 0.8333        | 0.9496              | 0.9457               | 0.9652                 | 0.9683        | 0.9345         |
+| `meshtasticmodel_V1_EgonElbre`                | 0.7434                | 0.9453            | 0.9660            | 0.7841           | 0.8095       | 0.8553                  | 0.8333        | 0.9502              | 0.9357               | 0.9703                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_V4_EgonElbre`                | 0.7434                | 0.9453            | 0.9660            | 0.7841           | 0.8095       | 0.8553                  | 0.8333        | 0.9502              | 0.9357               | 0.9703                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_V5_EgonElbre`                | 0.7434                | 0.9453            | 0.9660            | 0.7841           | 0.8095       | 0.8553                  | 0.8333        | 0.9502              | 0.9357               | 0.9703                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_V6_EgonElbre`                | 0.7434                | 0.9453            | 0.9660            | 0.7841           | 0.8095       | 0.8553                  | 0.8333        | 0.9502              | 0.9357               | 0.9703                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_V7_EgonElbre`                | 0.7436                | 0.9465            | 0.9693            | 0.8129           | 0.8571       | 0.8553                  | 0.8333        | 0.9496              | 0.9471               | 0.9652                 | 0.9683        | 0.9345         |
+| `meshtasticmodel_V3_EgonElbre`                | 0.7451                | 0.9498            | 0.9689            | 0.8064           | 0.8571       | 0.8684                  | 0.8333        | 0.9623              | 0.9383               | 0.9779                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_V2_EgonElbre`                | 0.8067                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `shoco_TextEn_tmthrgd_Jorropo`                | 0.8089                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `smaz_cespare_Jorropo`                        | 0.8319                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `arithmetic_Tom`                              | 0.8450                | 0.9958            | 0.9887            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 0.9997              | 1.0000               | 0.9414                 | 1.0000        | 0.9709         |
+| `shoco_TextEn_tmthrgd`                        | 0.8472                | 1.0000            | 0.9998            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 0.9600         |
+| `shoco_WordsEn_tmthrgd_Jorropo`               | 0.8684                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `smaz_cespare`                                | 0.8720                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 0.9855         |
+| `shoco_Emails_tmthrgd_Jorropo`                | 0.8901                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `shoco_FilePath_tmthrgd_Jorropo`              | 0.8937                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `shoco_WordsEn_tmthrgd`                       | 0.9047                | 1.0000            | 0.9998            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 0.9600         |
+| `shoco_Emails_tmthrgd`                        | 0.9252                | 1.0000            | 0.9998            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 0.9673         |
+| `shoco_FilePath_tmthrgd`                      | 0.9281                | 1.0000            | 0.9998            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 0.9636         |
+| `flate_klauspost`                             | 0.9324                | 0.9990            | 0.9993            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7574               | 0.9567                 | 1.0000        | 1.0000         |
+| `flate_std`                                   | 0.9410                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7259               | 0.9711                 | 1.0000        | 1.0000         |
+| `meshtasticmodel_pbmodel-o1_EgonElbre`        | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_pbmodel-o2_EgonElbre`        | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_pbmodel-varint_EgonElbre`    | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `meshtasticmodel_pbmodel_EgonElbre`           | 0.9434                | 0.9453            | 0.9617            | 0.7824           | 0.8095       | 0.8553                  | 0.8333        | 0.9496              | 0.9336               | 0.9652                 | 0.9683        | 1.0000         |
+| `arithmetic`                                  | 0.9450                | 0.9946            | 0.9996            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 0.9999              | 1.0000               | 1.0000                 | 1.0000        | 0.9673         |
+| `zlib_klauspost`                              | 0.9470                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.8311               | 0.9788                 | 1.0000        | 1.0000         |
+| `lz4_cloudflareHC`                            | 0.9509                | 0.9991            | 0.9999            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7299               | 0.9720                 | 1.0000        | 1.0000         |
+| `zlib_std`                                    | 0.9515                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7983               | 0.9847                 | 1.0000        | 1.0000         |
+| `lz4_cloudflare`                              | 0.9518                | 0.9991            | 0.9999            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7534               | 0.9771                 | 1.0000        | 1.0000         |
+| `lzw_std`                                     | 0.9583                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.7983               | 0.9558                 | 1.0000        | 1.0000         |
+| `gzip_klauspost`                              | 0.9601                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.9055               | 0.9992                 | 1.0000        | 1.0000         |
+| `gzip_std`                                    | 0.9624                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.8874               | 1.0000                 | 1.0000        | 1.0000         |
+| `s2_klauspost`                                | 0.9637                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.8928               | 1.0000                 | 1.0000        | 1.0000         |
+| `lz4_pierrec`                                 | 0.9649                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.8881               | 1.0000                 | 1.0000        | 1.0000         |
+| `snappy_klauspost`                            | 0.9649                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 0.9182               | 1.0000                 | 1.0000        | 1.0000         |
+| `noop`                                        | 1.0000                | 1.0000            | 1.0000            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 1.0000              | 1.0000               | 1.0000                 | 1.0000        | 1.0000         |
+| `rle_inkyblackness`                           | 1.0000                | 1.0000            | 0.9999            | 1.0000           | 1.0000       | 1.0000                  | 1.0000        | 0.9999              | 0.8438               | 1.0000                 | 1.0000        | 1.0000         |
 
 
 ## Dictionary/Model Sizes
@@ -77,7 +76,6 @@ A ratio **below** 1 means the compressed data is **smaller** than the uncompress
 | Compressor | Dictionary Size (bytes) |
 |------------|------------------------|
 | `arithmetic` | 7196 |
-| `arithmetic_Jorropo` | 7196 |
 | `arithmetic_Tom` | 7196 |
 | `flate_klauspost` | 0 (algorithm-based) |
 | `flate_std` | 0 (algorithm-based) |
@@ -142,130 +140,128 @@ A ratio **below** 1 means the compressed data is **smaller** than the uncompress
 
 | Compressor | Average Reciprocal Compression Ratio (TEXT_MESSAGE_APP only) |
 |------------|--------------------------------------------------------------|
-| `unishox2_alpha_only` | 0.6555 |
-| `snowflake_Jorropo` | 0.6790 |
-| `unishox2_alpha_num_only` | 0.6894 |
-| `unishox2_no_uni_favor_text` | 0.7102 |
-| `unishox2_favor_alpha` | 0.7132 |
-| `unishox2_alpha_num_sym_only` | 0.7159 |
-| `unishox2_alpha_num_sym_only_text` | 0.7159 |
-| `meshtasticmodel_V10_EgonElbre` | 0.7171 |
-| `meshtasticmodel_V8_EgonElbre` | 0.7171 |
-| `meshtasticmodel_V9_EgonElbre` | 0.7171 |
-| `meshtasticmodel_V1_EgonElbre` | 0.7175 |
-| `meshtasticmodel_V4_EgonElbre` | 0.7175 |
-| `meshtasticmodel_V5_EgonElbre` | 0.7175 |
-| `meshtasticmodel_V6_EgonElbre` | 0.7175 |
-| `meshtasticmodel_V7_EgonElbre` | 0.7175 |
-| `meshtasticmodel_V3_EgonElbre` | 0.7186 |
-| `unishox2_json_no_uni` | 0.7194 |
-| `unishox2_no_uni` | 0.7194 |
-| `unishox2_default` | 0.7236 |
-| `unishox2_html` | 0.7236 |
-| `unishox2_json` | 0.7236 |
-| `unishox2_url` | 0.7236 |
-| `unishox2_xml` | 0.7236 |
-| `unishox2_no_dict` | 0.7240 |
-| `unishox2_favor_dict` | 0.7252 |
-| `unishox2_favor_sym` | 0.7302 |
-| `unishox2_favor_umlaut` | 0.7313 |
-| `shoco_TextEn_tmthrgd_Jorropo` | 0.7768 |
-| `meshtasticmodel_V2_EgonElbre` | 0.7794 |
-| `smaz_cespare_Jorropo` | 0.7806 |
-| `shoco_TextEn_tmthrgd` | 0.8145 |
-| `arithmetic_Jorropo` | 0.8264 |
-| `arithmetic_Tom` | 0.8264 |
-| `smaz_cespare` | 0.8283 |
-| `shoco_WordsEn_tmthrgd_Jorropo` | 0.8499 |
-| `shoco_Emails_tmthrgd_Jorropo` | 0.8799 |
-| `shoco_WordsEn_tmthrgd` | 0.8861 |
-| `shoco_FilePath_tmthrgd_Jorropo` | 0.8899 |
-| `shoco_Emails_tmthrgd` | 0.9130 |
-| `shoco_FilePath_tmthrgd` | 0.9246 |
-| `arithmetic` | 0.9326 |
-| `meshtasticmodel_pbmodel-o1_EgonElbre` | 0.9473 |
-| `meshtasticmodel_pbmodel-o2_EgonElbre` | 0.9473 |
-| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9473 |
-| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9473 |
-| `meshtasticmodel_pbmodel-varint_EgonElbre` | 0.9473 |
-| `meshtasticmodel_pbmodel_EgonElbre` | 0.9473 |
-| `flate_klauspost` | 0.9615 |
-| `flate_std` | 0.9707 |
-| `zlib_klauspost` | 0.9773 |
-| `lzw_std` | 0.9788 |
-| `zlib_std` | 0.9827 |
-| `lz4_cloudflareHC` | 0.9881 |
-| `lz4_cloudflare` | 0.9885 |
-| `gzip_klauspost` | 0.9908 |
-| `gzip_std` | 0.9919 |
-| `lz4_pierrec` | 0.9954 |
-| `s2_klauspost` | 0.9954 |
-| `snappy_klauspost` | 0.9954 |
+| `unishox2_alpha_only` | 0.6606 |
+| `snowflake_Jorropo` | 0.6845 |
+| `unishox2_alpha_num_only` | 0.6944 |
+| `unishox2_no_uni_favor_text` | 0.7086 |
+| `unishox2_favor_alpha` | 0.7129 |
+| `unishox2_no_uni` | 0.7138 |
+| `unishox2_json_no_uni` | 0.7141 |
+| `unishox2_url` | 0.7168 |
+| `unishox2_default` | 0.7183 |
+| `unishox2_xml` | 0.7183 |
+| `unishox2_html` | 0.7186 |
+| `unishox2_json` | 0.7186 |
+| `unishox2_favor_dict` | 0.7206 |
+| `unishox2_alpha_num_sym_only` | 0.7222 |
+| `unishox2_alpha_num_sym_only_text` | 0.7222 |
+| `unishox2_favor_sym` | 0.7242 |
+| `unishox2_favor_umlaut` | 0.7262 |
+| `unishox2_no_dict` | 0.7310 |
+| `meshtasticmodel_V10_EgonElbre` | 0.7433 |
+| `meshtasticmodel_V8_EgonElbre` | 0.7433 |
+| `meshtasticmodel_V9_EgonElbre` | 0.7433 |
+| `meshtasticmodel_V1_EgonElbre` | 0.7434 |
+| `meshtasticmodel_V4_EgonElbre` | 0.7434 |
+| `meshtasticmodel_V5_EgonElbre` | 0.7434 |
+| `meshtasticmodel_V6_EgonElbre` | 0.7434 |
+| `meshtasticmodel_V7_EgonElbre` | 0.7436 |
+| `meshtasticmodel_V3_EgonElbre` | 0.7451 |
+| `meshtasticmodel_V2_EgonElbre` | 0.8067 |
+| `shoco_TextEn_tmthrgd_Jorropo` | 0.8089 |
+| `smaz_cespare_Jorropo` | 0.8319 |
+| `arithmetic_Tom` | 0.8450 |
+| `shoco_TextEn_tmthrgd` | 0.8472 |
+| `shoco_WordsEn_tmthrgd_Jorropo` | 0.8684 |
+| `smaz_cespare` | 0.8720 |
+| `shoco_Emails_tmthrgd_Jorropo` | 0.8901 |
+| `shoco_FilePath_tmthrgd_Jorropo` | 0.8937 |
+| `shoco_WordsEn_tmthrgd` | 0.9047 |
+| `shoco_Emails_tmthrgd` | 0.9252 |
+| `shoco_FilePath_tmthrgd` | 0.9281 |
+| `flate_klauspost` | 0.9324 |
+| `flate_std` | 0.9410 |
+| `meshtasticmodel_pbmodel-o1_EgonElbre` | 0.9434 |
+| `meshtasticmodel_pbmodel-o2_EgonElbre` | 0.9434 |
+| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9434 |
+| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9434 |
+| `meshtasticmodel_pbmodel-varint_EgonElbre` | 0.9434 |
+| `meshtasticmodel_pbmodel_EgonElbre` | 0.9434 |
+| `arithmetic` | 0.9450 |
+| `zlib_klauspost` | 0.9470 |
+| `lz4_cloudflareHC` | 0.9509 |
+| `zlib_std` | 0.9515 |
+| `lz4_cloudflare` | 0.9518 |
+| `lzw_std` | 0.9583 |
+| `gzip_klauspost` | 0.9601 |
+| `gzip_std` | 0.9624 |
+| `s2_klauspost` | 0.9637 |
+| `lz4_pierrec` | 0.9649 |
+| `snappy_klauspost` | 0.9649 |
 | `noop` | 1.0000 |
 | `rle_inkyblackness` | 1.0000 |
 
 | Compressor | Average Reciprocal Compression Ratio |
 |------------|--------------------------------------|
-| `snowflake_Jorropo` | 0.8779 |
-| `meshtasticmodel_pbmodel-o1_EgonElbre` | 0.9531 |
-| `meshtasticmodel_pbmodel-o2_EgonElbre` | 0.9531 |
-| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9531 |
-| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9531 |
-| `meshtasticmodel_pbmodel-varint_EgonElbre` | 0.9531 |
-| `meshtasticmodel_pbmodel_EgonElbre` | 0.9531 |
-| `meshtasticmodel_V1_EgonElbre` | 0.9541 |
-| `meshtasticmodel_V4_EgonElbre` | 0.9541 |
-| `meshtasticmodel_V5_EgonElbre` | 0.9541 |
-| `meshtasticmodel_V6_EgonElbre` | 0.9541 |
-| `meshtasticmodel_V10_EgonElbre` | 0.9555 |
-| `meshtasticmodel_V8_EgonElbre` | 0.9555 |
-| `meshtasticmodel_V9_EgonElbre` | 0.9555 |
-| `meshtasticmodel_V7_EgonElbre` | 0.9563 |
-| `meshtasticmodel_V3_EgonElbre` | 0.9597 |
-| `arithmetic_Jorropo` | 0.9919 |
-| `arithmetic_Tom` | 0.9919 |
-| `unishox2_alpha_only` | 0.9980 |
-| `arithmetic` | 0.9980 |
-| `unishox2_alpha_num_only` | 0.9982 |
-| `unishox2_no_uni_favor_text` | 0.9983 |
-| `unishox2_favor_alpha` | 0.9983 |
-| `unishox2_alpha_num_sym_only` | 0.9984 |
-| `unishox2_alpha_num_sym_only_text` | 0.9984 |
-| `unishox2_json_no_uni` | 0.9984 |
-| `unishox2_no_uni` | 0.9984 |
-| `unishox2_default` | 0.9984 |
-| `unishox2_html` | 0.9984 |
-| `unishox2_json` | 0.9984 |
-| `unishox2_url` | 0.9984 |
-| `unishox2_xml` | 0.9984 |
-| `unishox2_no_dict` | 0.9984 |
-| `unishox2_favor_dict` | 0.9984 |
-| `unishox2_favor_sym` | 0.9984 |
-| `unishox2_favor_umlaut` | 0.9984 |
-| `shoco_TextEn_tmthrgd_Jorropo` | 0.9987 |
-| `meshtasticmodel_V2_EgonElbre` | 0.9987 |
-| `smaz_cespare_Jorropo` | 0.9987 |
-| `shoco_TextEn_tmthrgd` | 0.9988 |
-| `flate_klauspost` | 0.9989 |
-| `smaz_cespare` | 0.9990 |
-| `shoco_WordsEn_tmthrgd_Jorropo` | 0.9991 |
-| `shoco_WordsEn_tmthrgd` | 0.9992 |
-| `shoco_Emails_tmthrgd_Jorropo` | 0.9993 |
-| `shoco_FilePath_tmthrgd_Jorropo` | 0.9994 |
-| `shoco_Emails_tmthrgd` | 0.9994 |
-| `lz4_cloudflareHC` | 0.9995 |
-| `lz4_cloudflare` | 0.9995 |
-| `shoco_FilePath_tmthrgd` | 0.9995 |
-| `flate_std` | 0.9996 |
-| `lzw_std` | 0.9997 |
-| `zlib_klauspost` | 0.9997 |
-| `zlib_std` | 0.9997 |
-| `gzip_std` | 0.9998 |
-| `gzip_klauspost` | 0.9998 |
-| `lz4_pierrec` | 0.9998 |
-| `s2_klauspost` | 0.9998 |
-| `snappy_klauspost` | 0.9998 |
-| `rle_inkyblackness` | 0.9998 |
+| `snowflake_Jorropo` | 0.8790 |
+| `meshtasticmodel_V1_EgonElbre` | 0.9524 |
+| `meshtasticmodel_V4_EgonElbre` | 0.9524 |
+| `meshtasticmodel_V5_EgonElbre` | 0.9524 |
+| `meshtasticmodel_V6_EgonElbre` | 0.9524 |
+| `meshtasticmodel_pbmodel-o1_EgonElbre` | 0.9525 |
+| `meshtasticmodel_pbmodel-o2_EgonElbre` | 0.9525 |
+| `meshtasticmodel_pbmodel-varint-o1_EgonElbre` | 0.9525 |
+| `meshtasticmodel_pbmodel-varint-o2_EgonElbre` | 0.9525 |
+| `meshtasticmodel_pbmodel-varint_EgonElbre` | 0.9525 |
+| `meshtasticmodel_pbmodel_EgonElbre` | 0.9525 |
+| `meshtasticmodel_V10_EgonElbre` | 0.9537 |
+| `meshtasticmodel_V8_EgonElbre` | 0.9537 |
+| `meshtasticmodel_V9_EgonElbre` | 0.9537 |
+| `meshtasticmodel_V7_EgonElbre` | 0.9545 |
+| `meshtasticmodel_V3_EgonElbre` | 0.9580 |
+| `arithmetic_Tom` | 0.9912 |
+| `unishox2_alpha_only` | 0.9958 |
+| `unishox2_alpha_num_only` | 0.9962 |
+| `unishox2_no_uni_favor_text` | 0.9964 |
+| `unishox2_favor_alpha` | 0.9965 |
+| `unishox2_no_uni` | 0.9965 |
+| `unishox2_json_no_uni` | 0.9965 |
+| `unishox2_url` | 0.9965 |
+| `unishox2_default` | 0.9965 |
+| `unishox2_xml` | 0.9965 |
+| `unishox2_html` | 0.9965 |
+| `unishox2_json` | 0.9965 |
+| `unishox2_favor_dict` | 0.9966 |
+| `unishox2_alpha_num_sym_only` | 0.9966 |
+| `unishox2_alpha_num_sym_only_text` | 0.9966 |
+| `unishox2_favor_sym` | 0.9966 |
+| `unishox2_favor_umlaut` | 0.9966 |
+| `unishox2_no_dict` | 0.9967 |
+| `meshtasticmodel_V2_EgonElbre` | 0.9976 |
+| `shoco_TextEn_tmthrgd_Jorropo` | 0.9976 |
+| `flate_klauspost` | 0.9976 |
+| `arithmetic` | 0.9977 |
+| `smaz_cespare_Jorropo` | 0.9979 |
+| `shoco_TextEn_tmthrgd` | 0.9980 |
+| `lz4_cloudflareHC` | 0.9982 |
+| `flate_std` | 0.9983 |
+| `lz4_cloudflare` | 0.9983 |
+| `shoco_WordsEn_tmthrgd_Jorropo` | 0.9984 |
+| `smaz_cespare` | 0.9984 |
+| `shoco_Emails_tmthrgd_Jorropo` | 0.9986 |
+| `shoco_FilePath_tmthrgd_Jorropo` | 0.9987 |
+| `lzw_std` | 0.9987 |
+| `zlib_std` | 0.9987 |
+| `shoco_WordsEn_tmthrgd` | 0.9987 |
+| `zlib_klauspost` | 0.9987 |
+| `shoco_Emails_tmthrgd` | 0.9990 |
+| `shoco_FilePath_tmthrgd` | 0.9990 |
+| `gzip_std` | 0.9992 |
+| `gzip_klauspost` | 0.9992 |
+| `lz4_pierrec` | 0.9992 |
+| `s2_klauspost` | 0.9992 |
+| `snappy_klauspost` | 0.9993 |
+| `rle_inkyblackness` | 0.9994 |
 | `noop` | 1.0000 |
 
 ## CDF Graphs
@@ -277,6 +273,30 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 ![snowflake_Jorropo only TEXT_MESSAGE_APP CDF](graphs/snowflake_Jorropo_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![snowflake_Jorropo CDF](graphs/snowflake_Jorropo_cdf.png)
+
+### `meshtasticmodel_V1_EgonElbre`
+
+![meshtasticmodel_V1_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V1_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
+
+![meshtasticmodel_V1_EgonElbre CDF](graphs/meshtasticmodel_V1_EgonElbre_cdf.png)
+
+### `meshtasticmodel_V4_EgonElbre`
+
+![meshtasticmodel_V4_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V4_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
+
+![meshtasticmodel_V4_EgonElbre CDF](graphs/meshtasticmodel_V4_EgonElbre_cdf.png)
+
+### `meshtasticmodel_V5_EgonElbre`
+
+![meshtasticmodel_V5_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V5_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
+
+![meshtasticmodel_V5_EgonElbre CDF](graphs/meshtasticmodel_V5_EgonElbre_cdf.png)
+
+### `meshtasticmodel_V6_EgonElbre`
+
+![meshtasticmodel_V6_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V6_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
+
+![meshtasticmodel_V6_EgonElbre CDF](graphs/meshtasticmodel_V6_EgonElbre_cdf.png)
 
 ### `meshtasticmodel_pbmodel-o1_EgonElbre`
 
@@ -314,30 +334,6 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![meshtasticmodel_pbmodel_EgonElbre CDF](graphs/meshtasticmodel_pbmodel_EgonElbre_cdf.png)
 
-### `meshtasticmodel_V1_EgonElbre`
-
-![meshtasticmodel_V1_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V1_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
-
-![meshtasticmodel_V1_EgonElbre CDF](graphs/meshtasticmodel_V1_EgonElbre_cdf.png)
-
-### `meshtasticmodel_V4_EgonElbre`
-
-![meshtasticmodel_V4_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V4_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
-
-![meshtasticmodel_V4_EgonElbre CDF](graphs/meshtasticmodel_V4_EgonElbre_cdf.png)
-
-### `meshtasticmodel_V5_EgonElbre`
-
-![meshtasticmodel_V5_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V5_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
-
-![meshtasticmodel_V5_EgonElbre CDF](graphs/meshtasticmodel_V5_EgonElbre_cdf.png)
-
-### `meshtasticmodel_V6_EgonElbre`
-
-![meshtasticmodel_V6_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V6_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
-
-![meshtasticmodel_V6_EgonElbre CDF](graphs/meshtasticmodel_V6_EgonElbre_cdf.png)
-
 ### `meshtasticmodel_V10_EgonElbre`
 
 ![meshtasticmodel_V10_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V10_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
@@ -368,12 +364,6 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![meshtasticmodel_V3_EgonElbre CDF](graphs/meshtasticmodel_V3_EgonElbre_cdf.png)
 
-### `arithmetic_Jorropo`
-
-![arithmetic_Jorropo only TEXT_MESSAGE_APP CDF](graphs/arithmetic_Jorropo_only_TEXT_MESSAGE_APP_cdf.png)
-
-![arithmetic_Jorropo CDF](graphs/arithmetic_Jorropo_cdf.png)
-
 ### `arithmetic_Tom`
 
 ![arithmetic_Tom only TEXT_MESSAGE_APP CDF](graphs/arithmetic_Tom_only_TEXT_MESSAGE_APP_cdf.png)
@@ -385,12 +375,6 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 ![unishox2_alpha_only only TEXT_MESSAGE_APP CDF](graphs/unishox2_alpha_only_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![unishox2_alpha_only CDF](graphs/unishox2_alpha_only_cdf.png)
-
-### `arithmetic`
-
-![arithmetic only TEXT_MESSAGE_APP CDF](graphs/arithmetic_only_TEXT_MESSAGE_APP_cdf.png)
-
-![arithmetic CDF](graphs/arithmetic_cdf.png)
 
 ### `unishox2_alpha_num_only`
 
@@ -410,17 +394,11 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![unishox2_favor_alpha CDF](graphs/unishox2_favor_alpha_cdf.png)
 
-### `unishox2_alpha_num_sym_only`
+### `unishox2_no_uni`
 
-![unishox2_alpha_num_sym_only only TEXT_MESSAGE_APP CDF](graphs/unishox2_alpha_num_sym_only_only_TEXT_MESSAGE_APP_cdf.png)
+![unishox2_no_uni only TEXT_MESSAGE_APP CDF](graphs/unishox2_no_uni_only_TEXT_MESSAGE_APP_cdf.png)
 
-![unishox2_alpha_num_sym_only CDF](graphs/unishox2_alpha_num_sym_only_cdf.png)
-
-### `unishox2_alpha_num_sym_only_text`
-
-![unishox2_alpha_num_sym_only_text only TEXT_MESSAGE_APP CDF](graphs/unishox2_alpha_num_sym_only_text_only_TEXT_MESSAGE_APP_cdf.png)
-
-![unishox2_alpha_num_sym_only_text CDF](graphs/unishox2_alpha_num_sym_only_text_cdf.png)
+![unishox2_no_uni CDF](graphs/unishox2_no_uni_cdf.png)
 
 ### `unishox2_json_no_uni`
 
@@ -428,17 +406,23 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![unishox2_json_no_uni CDF](graphs/unishox2_json_no_uni_cdf.png)
 
-### `unishox2_no_uni`
+### `unishox2_url`
 
-![unishox2_no_uni only TEXT_MESSAGE_APP CDF](graphs/unishox2_no_uni_only_TEXT_MESSAGE_APP_cdf.png)
+![unishox2_url only TEXT_MESSAGE_APP CDF](graphs/unishox2_url_only_TEXT_MESSAGE_APP_cdf.png)
 
-![unishox2_no_uni CDF](graphs/unishox2_no_uni_cdf.png)
+![unishox2_url CDF](graphs/unishox2_url_cdf.png)
 
 ### `unishox2_default`
 
 ![unishox2_default only TEXT_MESSAGE_APP CDF](graphs/unishox2_default_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![unishox2_default CDF](graphs/unishox2_default_cdf.png)
+
+### `unishox2_xml`
+
+![unishox2_xml only TEXT_MESSAGE_APP CDF](graphs/unishox2_xml_only_TEXT_MESSAGE_APP_cdf.png)
+
+![unishox2_xml CDF](graphs/unishox2_xml_cdf.png)
 
 ### `unishox2_html`
 
@@ -452,29 +436,23 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![unishox2_json CDF](graphs/unishox2_json_cdf.png)
 
-### `unishox2_url`
-
-![unishox2_url only TEXT_MESSAGE_APP CDF](graphs/unishox2_url_only_TEXT_MESSAGE_APP_cdf.png)
-
-![unishox2_url CDF](graphs/unishox2_url_cdf.png)
-
-### `unishox2_xml`
-
-![unishox2_xml only TEXT_MESSAGE_APP CDF](graphs/unishox2_xml_only_TEXT_MESSAGE_APP_cdf.png)
-
-![unishox2_xml CDF](graphs/unishox2_xml_cdf.png)
-
-### `unishox2_no_dict`
-
-![unishox2_no_dict only TEXT_MESSAGE_APP CDF](graphs/unishox2_no_dict_only_TEXT_MESSAGE_APP_cdf.png)
-
-![unishox2_no_dict CDF](graphs/unishox2_no_dict_cdf.png)
-
 ### `unishox2_favor_dict`
 
 ![unishox2_favor_dict only TEXT_MESSAGE_APP CDF](graphs/unishox2_favor_dict_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![unishox2_favor_dict CDF](graphs/unishox2_favor_dict_cdf.png)
+
+### `unishox2_alpha_num_sym_only`
+
+![unishox2_alpha_num_sym_only only TEXT_MESSAGE_APP CDF](graphs/unishox2_alpha_num_sym_only_only_TEXT_MESSAGE_APP_cdf.png)
+
+![unishox2_alpha_num_sym_only CDF](graphs/unishox2_alpha_num_sym_only_cdf.png)
+
+### `unishox2_alpha_num_sym_only_text`
+
+![unishox2_alpha_num_sym_only_text only TEXT_MESSAGE_APP CDF](graphs/unishox2_alpha_num_sym_only_text_only_TEXT_MESSAGE_APP_cdf.png)
+
+![unishox2_alpha_num_sym_only_text CDF](graphs/unishox2_alpha_num_sym_only_text_cdf.png)
 
 ### `unishox2_favor_sym`
 
@@ -488,17 +466,35 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![unishox2_favor_umlaut CDF](graphs/unishox2_favor_umlaut_cdf.png)
 
-### `shoco_TextEn_tmthrgd_Jorropo`
+### `unishox2_no_dict`
 
-![shoco_TextEn_tmthrgd_Jorropo only TEXT_MESSAGE_APP CDF](graphs/shoco_TextEn_tmthrgd_Jorropo_only_TEXT_MESSAGE_APP_cdf.png)
+![unishox2_no_dict only TEXT_MESSAGE_APP CDF](graphs/unishox2_no_dict_only_TEXT_MESSAGE_APP_cdf.png)
 
-![shoco_TextEn_tmthrgd_Jorropo CDF](graphs/shoco_TextEn_tmthrgd_Jorropo_cdf.png)
+![unishox2_no_dict CDF](graphs/unishox2_no_dict_cdf.png)
 
 ### `meshtasticmodel_V2_EgonElbre`
 
 ![meshtasticmodel_V2_EgonElbre only TEXT_MESSAGE_APP CDF](graphs/meshtasticmodel_V2_EgonElbre_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![meshtasticmodel_V2_EgonElbre CDF](graphs/meshtasticmodel_V2_EgonElbre_cdf.png)
+
+### `shoco_TextEn_tmthrgd_Jorropo`
+
+![shoco_TextEn_tmthrgd_Jorropo only TEXT_MESSAGE_APP CDF](graphs/shoco_TextEn_tmthrgd_Jorropo_only_TEXT_MESSAGE_APP_cdf.png)
+
+![shoco_TextEn_tmthrgd_Jorropo CDF](graphs/shoco_TextEn_tmthrgd_Jorropo_cdf.png)
+
+### `flate_klauspost`
+
+![flate_klauspost only TEXT_MESSAGE_APP CDF](graphs/flate_klauspost_only_TEXT_MESSAGE_APP_cdf.png)
+
+![flate_klauspost CDF](graphs/flate_klauspost_cdf.png)
+
+### `arithmetic`
+
+![arithmetic only TEXT_MESSAGE_APP CDF](graphs/arithmetic_only_TEXT_MESSAGE_APP_cdf.png)
+
+![arithmetic CDF](graphs/arithmetic_cdf.png)
 
 ### `smaz_cespare_Jorropo`
 
@@ -512,17 +508,23 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![shoco_TextEn_tmthrgd CDF](graphs/shoco_TextEn_tmthrgd_cdf.png)
 
-### `flate_klauspost`
+### `lz4_cloudflareHC`
 
-![flate_klauspost only TEXT_MESSAGE_APP CDF](graphs/flate_klauspost_only_TEXT_MESSAGE_APP_cdf.png)
+![lz4_cloudflareHC only TEXT_MESSAGE_APP CDF](graphs/lz4_cloudflareHC_only_TEXT_MESSAGE_APP_cdf.png)
 
-![flate_klauspost CDF](graphs/flate_klauspost_cdf.png)
+![lz4_cloudflareHC CDF](graphs/lz4_cloudflareHC_cdf.png)
 
-### `smaz_cespare`
+### `flate_std`
 
-![smaz_cespare only TEXT_MESSAGE_APP CDF](graphs/smaz_cespare_only_TEXT_MESSAGE_APP_cdf.png)
+![flate_std only TEXT_MESSAGE_APP CDF](graphs/flate_std_only_TEXT_MESSAGE_APP_cdf.png)
 
-![smaz_cespare CDF](graphs/smaz_cespare_cdf.png)
+![flate_std CDF](graphs/flate_std_cdf.png)
+
+### `lz4_cloudflare`
+
+![lz4_cloudflare only TEXT_MESSAGE_APP CDF](graphs/lz4_cloudflare_only_TEXT_MESSAGE_APP_cdf.png)
+
+![lz4_cloudflare CDF](graphs/lz4_cloudflare_cdf.png)
 
 ### `shoco_WordsEn_tmthrgd_Jorropo`
 
@@ -530,11 +532,11 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![shoco_WordsEn_tmthrgd_Jorropo CDF](graphs/shoco_WordsEn_tmthrgd_Jorropo_cdf.png)
 
-### `shoco_WordsEn_tmthrgd`
+### `smaz_cespare`
 
-![shoco_WordsEn_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_WordsEn_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
+![smaz_cespare only TEXT_MESSAGE_APP CDF](graphs/smaz_cespare_only_TEXT_MESSAGE_APP_cdf.png)
 
-![shoco_WordsEn_tmthrgd CDF](graphs/shoco_WordsEn_tmthrgd_cdf.png)
+![smaz_cespare CDF](graphs/smaz_cespare_cdf.png)
 
 ### `shoco_Emails_tmthrgd_Jorropo`
 
@@ -548,41 +550,23 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![shoco_FilePath_tmthrgd_Jorropo CDF](graphs/shoco_FilePath_tmthrgd_Jorropo_cdf.png)
 
-### `shoco_Emails_tmthrgd`
-
-![shoco_Emails_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_Emails_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
-
-![shoco_Emails_tmthrgd CDF](graphs/shoco_Emails_tmthrgd_cdf.png)
-
-### `lz4_cloudflareHC`
-
-![lz4_cloudflareHC only TEXT_MESSAGE_APP CDF](graphs/lz4_cloudflareHC_only_TEXT_MESSAGE_APP_cdf.png)
-
-![lz4_cloudflareHC CDF](graphs/lz4_cloudflareHC_cdf.png)
-
-### `lz4_cloudflare`
-
-![lz4_cloudflare only TEXT_MESSAGE_APP CDF](graphs/lz4_cloudflare_only_TEXT_MESSAGE_APP_cdf.png)
-
-![lz4_cloudflare CDF](graphs/lz4_cloudflare_cdf.png)
-
-### `shoco_FilePath_tmthrgd`
-
-![shoco_FilePath_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_FilePath_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
-
-![shoco_FilePath_tmthrgd CDF](graphs/shoco_FilePath_tmthrgd_cdf.png)
-
-### `flate_std`
-
-![flate_std only TEXT_MESSAGE_APP CDF](graphs/flate_std_only_TEXT_MESSAGE_APP_cdf.png)
-
-![flate_std CDF](graphs/flate_std_cdf.png)
-
 ### `lzw_std`
 
 ![lzw_std only TEXT_MESSAGE_APP CDF](graphs/lzw_std_only_TEXT_MESSAGE_APP_cdf.png)
 
 ![lzw_std CDF](graphs/lzw_std_cdf.png)
+
+### `zlib_std`
+
+![zlib_std only TEXT_MESSAGE_APP CDF](graphs/zlib_std_only_TEXT_MESSAGE_APP_cdf.png)
+
+![zlib_std CDF](graphs/zlib_std_cdf.png)
+
+### `shoco_WordsEn_tmthrgd`
+
+![shoco_WordsEn_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_WordsEn_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
+
+![shoco_WordsEn_tmthrgd CDF](graphs/shoco_WordsEn_tmthrgd_cdf.png)
 
 ### `zlib_klauspost`
 
@@ -590,11 +574,17 @@ The following graphs show the cumulative distribution function (CDF) of the reci
 
 ![zlib_klauspost CDF](graphs/zlib_klauspost_cdf.png)
 
-### `zlib_std`
+### `shoco_Emails_tmthrgd`
 
-![zlib_std only TEXT_MESSAGE_APP CDF](graphs/zlib_std_only_TEXT_MESSAGE_APP_cdf.png)
+![shoco_Emails_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_Emails_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
 
-![zlib_std CDF](graphs/zlib_std_cdf.png)
+![shoco_Emails_tmthrgd CDF](graphs/shoco_Emails_tmthrgd_cdf.png)
+
+### `shoco_FilePath_tmthrgd`
+
+![shoco_FilePath_tmthrgd only TEXT_MESSAGE_APP CDF](graphs/shoco_FilePath_tmthrgd_only_TEXT_MESSAGE_APP_cdf.png)
+
+![shoco_FilePath_tmthrgd CDF](graphs/shoco_FilePath_tmthrgd_cdf.png)
 
 ### `gzip_std`
 

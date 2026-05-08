@@ -1,0 +1,420 @@
+2026/05/09 00:28:32 Testing compressor: flate_std
+2026/05/09 00:28:33 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 2s
+2026/05/09 00:28:34 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:28:34 Processed 6000/10000 rows (60.00%), elapsed: 2s, remaining: 1s
+2026/05/09 00:28:35 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:28:36 Processed 10000/10000 rows (100.00%), elapsed: 3s, remaining: 0s
+2026/05/09 00:28:36 Testing compressor: flate_std only TEXT_MESSAGE_APP
+2026/05/09 00:28:40 Testing compressor: s2_klauspost
+2026/05/09 00:28:41 Processed 2000/10000 rows (20.00%), elapsed: 1s, remaining: 4s
+2026/05/09 00:28:42 Processed 4000/10000 rows (40.00%), elapsed: 2s, remaining: 3s
+2026/05/09 00:28:44 Processed 6000/10000 rows (60.00%), elapsed: 3s, remaining: 2s
+2026/05/09 00:28:44 Processed 8000/10000 rows (80.00%), elapsed: 4s, remaining: 1s
+2026/05/09 00:28:45 Processed 10000/10000 rows (100.00%), elapsed: 5s, remaining: 0s
+2026/05/09 00:28:45 Testing compressor: s2_klauspost only TEXT_MESSAGE_APP
+2026/05/09 00:29:05 Testing compressor: rle_inkyblackness
+2026/05/09 00:29:05 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Testing compressor: rle_inkyblackness only TEXT_MESSAGE_APP
+2026/05/09 00:29:05 Testing compressor: shoco_FilePath_tmthrgd
+2026/05/09 00:29:05 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Testing compressor: shoco_FilePath_tmthrgd only TEXT_MESSAGE_APP
+2026/05/09 00:29:05 Testing compressor: meshtasticmodel_pbmodel-varint-o1_EgonElbre
+2026/05/09 00:29:05 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:05 Testing compressor: meshtasticmodel_pbmodel-varint-o1_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:06 Testing compressor: meshtasticmodel_V2_EgonElbre
+2026/05/09 00:29:06 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Testing compressor: meshtasticmodel_V2_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:06 Testing compressor: shoco_FilePath_tmthrgd_Jorropo
+2026/05/09 00:29:06 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:06 Testing compressor: shoco_FilePath_tmthrgd_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:06 Testing compressor: gzip_klauspost
+2026/05/09 00:29:07 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 2s
+2026/05/09 00:29:07 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:08 Processed 6000/10000 rows (60.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:09 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:09 Processed 10000/10000 rows (100.00%), elapsed: 3s, remaining: 0s
+2026/05/09 00:29:09 Testing compressor: gzip_klauspost only TEXT_MESSAGE_APP
+2026/05/09 00:29:15 Testing compressor: unishox2_html
+2026/05/09 00:29:15 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Testing compressor: unishox2_html only TEXT_MESSAGE_APP
+2026/05/09 00:29:15 Testing compressor: unishox2_default
+2026/05/09 00:29:15 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Testing compressor: unishox2_default only TEXT_MESSAGE_APP
+2026/05/09 00:29:15 Testing compressor: unishox2_url
+2026/05/09 00:29:15 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Testing compressor: unishox2_url only TEXT_MESSAGE_APP
+2026/05/09 00:29:15 Testing compressor: shoco_TextEn_tmthrgd
+2026/05/09 00:29:15 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:15 Testing compressor: shoco_TextEn_tmthrgd only TEXT_MESSAGE_APP
+2026/05/09 00:29:15 Testing compressor: zlib_klauspost
+2026/05/09 00:29:15 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 2s
+2026/05/09 00:29:16 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:17 Processed 6000/10000 rows (60.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:17 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:18 Processed 10000/10000 rows (100.00%), elapsed: 3s, remaining: 0s
+2026/05/09 00:29:18 Testing compressor: zlib_klauspost only TEXT_MESSAGE_APP
+2026/05/09 00:29:23 Testing compressor: lzw_std
+2026/05/09 00:29:23 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:23 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:23 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:23 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Testing compressor: lzw_std only TEXT_MESSAGE_APP
+2026/05/09 00:29:24 Testing compressor: snappy_klauspost
+2026/05/09 00:29:24 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Testing compressor: snappy_klauspost only TEXT_MESSAGE_APP
+2026/05/09 00:29:24 Testing compressor: lz4_cloudflare
+2026/05/09 00:29:24 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Testing compressor: lz4_cloudflare only TEXT_MESSAGE_APP
+2026/05/09 00:29:24 Testing compressor: unishox2_no_uni
+2026/05/09 00:29:24 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Testing compressor: unishox2_no_uni only TEXT_MESSAGE_APP
+2026/05/09 00:29:24 Testing compressor: unishox2_no_uni_favor_text
+2026/05/09 00:29:24 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:24 Testing compressor: unishox2_no_uni_favor_text only TEXT_MESSAGE_APP
+2026/05/09 00:29:25 Testing compressor: meshtasticmodel_pbmodel-varint-o2_EgonElbre
+2026/05/09 00:29:25 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Testing compressor: meshtasticmodel_pbmodel-varint-o2_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:25 Testing compressor: meshtasticmodel_V9_EgonElbre
+2026/05/09 00:29:25 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:25 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Testing compressor: meshtasticmodel_V9_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:26 Testing compressor: meshtasticmodel_V1_EgonElbre
+2026/05/09 00:29:26 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:26 Testing compressor: meshtasticmodel_V1_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:26 Testing compressor: flate_klauspost
+2026/05/09 00:29:27 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 2s
+2026/05/09 00:29:28 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:28 Processed 6000/10000 rows (60.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:29 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:30 Processed 10000/10000 rows (100.00%), elapsed: 3s, remaining: 0s
+2026/05/09 00:29:30 Testing compressor: flate_klauspost only TEXT_MESSAGE_APP
+2026/05/09 00:29:35 Testing compressor: snowflake_Jorropo
+2026/05/09 00:29:35 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Testing compressor: snowflake_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:35 Testing compressor: meshtasticmodel_pbmodel-varint_EgonElbre
+2026/05/09 00:29:35 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:35 Testing compressor: meshtasticmodel_pbmodel-varint_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:36 Testing compressor: meshtasticmodel_V4_EgonElbre
+2026/05/09 00:29:36 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Testing compressor: meshtasticmodel_V4_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:36 Testing compressor: shoco_Emails_tmthrgd
+2026/05/09 00:29:36 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Testing compressor: shoco_Emails_tmthrgd only TEXT_MESSAGE_APP
+2026/05/09 00:29:36 Testing compressor: meshtasticmodel_V10_EgonElbre
+2026/05/09 00:29:36 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:36 Testing compressor: meshtasticmodel_V10_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: noop
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: noop only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: lz4_pierrec
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: lz4_pierrec only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: smaz_cespare_Jorropo
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: smaz_cespare_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: unishox2_alpha_only
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: unishox2_alpha_only only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: unishox2_json
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: unishox2_json only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: unishox2_alpha_num_sym_only_text
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: unishox2_alpha_num_sym_only_text only TEXT_MESSAGE_APP
+2026/05/09 00:29:37 Testing compressor: unishox2_favor_dict
+2026/05/09 00:29:37 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:37 Testing compressor: unishox2_favor_dict only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: unishox2_alpha_num_only
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: unishox2_alpha_num_only only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: unishox2_favor_alpha
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: unishox2_favor_alpha only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: unishox2_favor_sym
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: unishox2_favor_sym only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: unishox2_xml
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: unishox2_xml only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: meshtasticmodel_pbmodel_EgonElbre
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: meshtasticmodel_pbmodel_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:38 Testing compressor: meshtasticmodel_V5_EgonElbre
+2026/05/09 00:29:38 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:38 Testing compressor: meshtasticmodel_V5_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:39 Testing compressor: gzip_std
+2026/05/09 00:29:40 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 3s
+2026/05/09 00:29:40 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 2s
+2026/05/09 00:29:41 Processed 6000/10000 rows (60.00%), elapsed: 2s, remaining: 1s
+2026/05/09 00:29:42 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:42 Processed 10000/10000 rows (100.00%), elapsed: 3s, remaining: 0s
+2026/05/09 00:29:42 Testing compressor: gzip_std only TEXT_MESSAGE_APP
+2026/05/09 00:29:48 Testing compressor: shoco_TextEn_tmthrgd_Jorropo
+2026/05/09 00:29:48 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Testing compressor: shoco_TextEn_tmthrgd_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:48 Testing compressor: meshtasticmodel_pbmodel-o1_EgonElbre
+2026/05/09 00:29:48 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Testing compressor: meshtasticmodel_pbmodel-o1_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:48 Testing compressor: meshtasticmodel_pbmodel-o2_EgonElbre
+2026/05/09 00:29:48 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Testing compressor: meshtasticmodel_pbmodel-o2_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:48 Testing compressor: meshtasticmodel_V3_EgonElbre
+2026/05/09 00:29:48 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:48 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Testing compressor: meshtasticmodel_V3_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:49 Testing compressor: meshtasticmodel_V8_EgonElbre
+2026/05/09 00:29:49 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Testing compressor: meshtasticmodel_V8_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:49 Testing compressor: shoco_Emails_tmthrgd_Jorropo
+2026/05/09 00:29:49 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:49 Testing compressor: shoco_Emails_tmthrgd_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:49 Testing compressor: arithmetic_Tom
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: arithmetic_Tom only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: smaz_cespare
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: smaz_cespare only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: shoco_WordsEn_tmthrgd_Jorropo
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: shoco_WordsEn_tmthrgd_Jorropo only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: unishox2_favor_umlaut
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: unishox2_favor_umlaut only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: unishox2_no_dict
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: unishox2_no_dict only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: meshtasticmodel_V6_EgonElbre
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: meshtasticmodel_V6_EgonElbre only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: shoco_WordsEn_tmthrgd
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: shoco_WordsEn_tmthrgd only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: unishox2_json_no_uni
+2026/05/09 00:29:50 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:50 Testing compressor: unishox2_json_no_uni only TEXT_MESSAGE_APP
+2026/05/09 00:29:50 Testing compressor: zlib_std
+2026/05/09 00:29:51 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 2s
+2026/05/09 00:29:52 Processed 4000/10000 rows (40.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:52 Processed 6000/10000 rows (60.00%), elapsed: 1s, remaining: 1s
+2026/05/09 00:29:53 Processed 8000/10000 rows (80.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:53 Processed 10000/10000 rows (100.00%), elapsed: 2s, remaining: 0s
+2026/05/09 00:29:53 Testing compressor: zlib_std only TEXT_MESSAGE_APP
+2026/05/09 00:29:58 Testing compressor: lz4_cloudflareHC
+2026/05/09 00:29:58 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Testing compressor: lz4_cloudflareHC only TEXT_MESSAGE_APP
+2026/05/09 00:29:58 Testing compressor: unishox2_alpha_num_sym_only
+2026/05/09 00:29:58 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Testing compressor: unishox2_alpha_num_sym_only only TEXT_MESSAGE_APP
+2026/05/09 00:29:58 Testing compressor: arithmetic
+2026/05/09 00:29:58 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Testing compressor: arithmetic only TEXT_MESSAGE_APP
+2026/05/09 00:29:58 Testing compressor: meshtasticmodel_V7_EgonElbre
+2026/05/09 00:29:58 Processed 2000/10000 rows (20.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 4000/10000 rows (40.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 6000/10000 rows (60.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 8000/10000 rows (80.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Processed 10000/10000 rows (100.00%), elapsed: 0s, remaining: 0s
+2026/05/09 00:29:58 Testing compressor: meshtasticmodel_V7_EgonElbre only TEXT_MESSAGE_APP
